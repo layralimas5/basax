@@ -1,0 +1,15 @@
+# Configuração de deploy da Netlify — site estático gerado pelo Next.js
+# O `next build` (com output: "export") gera a pasta `out/` com index.html + assets.
+
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Fallback de SPA: rotas internas caem no index.html se o arquivo não existir
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
