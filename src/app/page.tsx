@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Culturas } from "@/components/Culturas";
 import { About } from "@/components/About";
 import { Beneficios } from "@/components/Beneficios";
 import { SoilPotential } from "@/components/SoilPotential";
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <Culturas />
         <About />
         <Beneficios />
         <SoilPotential />

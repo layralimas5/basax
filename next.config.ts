@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   images: {
     // Necessário no export estático (sem o otimizador de imagens em servidor)
     unoptimized: true,
+    // Evita aviso de qualidade no dev (Next 16 exige allowlist)
+    qualities: [75, 100],
   },
 };
 

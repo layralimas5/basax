@@ -1,0 +1,23 @@
+FOTOS DAS CULTURAS
+==================
+
+Coloque aqui as fotos das culturas. Sugestão: imagens na vertical
+(proporção ~4:5), boa qualidade, foco na fruta/cultura.
+
+Nomes sugeridos (combinam com os comentários em src/components/Culturas.tsx):
+
+  soja.jpg
+  milho.jpg
+  cafe.jpg
+  cana.jpg
+  citros.jpg
+  algodao.jpg
+  feijao.jpg
+  frutas.jpg
+
+Depois de salvar a foto, abra src/components/Culturas.tsx e, na cultura
+correspondente, retire o comentário do campo "img". Exemplo:
+
+  { nome: "Soja", icon: Sprout, img: "/culturas/soja.jpg" },
+
+Pronto: o card passa a mostrar a foto no lugar do placeholder verde.

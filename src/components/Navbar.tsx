@@ -7,6 +7,7 @@ import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { href: "#culturas", label: "Culturas" },
   { href: "#sobre", label: "Sobre" },
   { href: "#beneficios", label: "Benefícios" },
   { href: "#solo", label: "O cenário" },
