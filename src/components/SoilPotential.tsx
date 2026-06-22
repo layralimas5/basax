@@ -13,7 +13,7 @@ export function SoilPotential() {
   return (
     <section
       id="solo"
-      className="scroll-mt-24 border-y border-zinc-200 bg-zinc-50/60 py-20 md:py-28 dark:border-zinc-800 dark:bg-zinc-900/30"
+      className="relative scroll-mt-24 border-t border-zinc-200 bg-zinc-200/70 py-20 md:py-28 dark:border-zinc-800 dark:bg-zinc-900/30"
     >
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -53,6 +53,9 @@ export function SoilPotential() {
           </Reveal>
         </div>
       </div>
+
+      {/* Degradê suave para fundir na seção branca seguinte (tampa a linha de divisão) */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-white dark:to-zinc-950" />
     </section>
   );
 }

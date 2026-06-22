@@ -151,7 +151,7 @@ export function Culturas() {
                   {/* disco verde */}
                   <div
                     style={c.discGrow ? { inset: `-${c.discGrow}%` } : undefined}
-                    className="absolute inset-0 overflow-hidden rounded-full bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 shadow-lg shadow-brand-900/25 ring-1 ring-black/5"
+                    className="absolute inset-0 overflow-hidden rounded-full bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 shadow-lg shadow-brand-900/25 ring-1 ring-black/5 transition-all duration-300 group-hover:shadow-xl group-hover:shadow-brand-900/40 group-hover:ring-2 group-hover:ring-gold-300/60"
                   >
                     <div
                       className="absolute inset-0 opacity-[0.12]"
@@ -202,7 +202,7 @@ export function Culturas() {
                 </div>
 
                 {/* Nome */}
-                <span className="mt-4 text-center text-sm font-semibold text-zinc-800 sm:text-base dark:text-zinc-100">
+                <span className="mt-4 text-center text-sm font-semibold text-zinc-800 transition-colors group-hover:text-brand-700 sm:text-base dark:text-zinc-100 dark:group-hover:text-brand-300">
                   {c.nome}
                 </span>
               </motion.div>
@@ -238,7 +238,7 @@ function ArrowButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={dir === "left" ? "Anterior" : "Próximo"}
-      className={`absolute top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-md transition hover:border-brand-300 hover:text-brand-700 disabled:pointer-events-none disabled:opacity-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 ${
+      className={`absolute top-1/2 z-10 grid h-10 w-10 -translate-y-1/2 cursor-pointer place-items-center rounded-full border border-zinc-200 bg-white text-zinc-700 shadow-md transition hover:scale-105 hover:border-gold-300 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-0 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 ${
         dir === "left" ? "left-0 -translate-x-1/2" : "right-0 translate-x-1/2"
       }`}
     >

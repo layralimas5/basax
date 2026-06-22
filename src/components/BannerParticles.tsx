@@ -33,7 +33,7 @@ export function BannerParticles() {
       {PARTICLES.map((p, i) => (
         <motion.span
           key={i}
-          className="absolute bottom-0 rounded-full bg-amber-200 shadow-[0_0_8px_rgba(251,191,36,0.9)]"
+          className="absolute bottom-0 rounded-full bg-gold-300 shadow-[0_0_10px_rgba(240,193,75,0.9)]"
           style={{ left: `${p.left}%`, width: p.size, height: p.size }}
           initial={{ opacity: 0, y: 0 }}
           animate={{ opacity: [0, p.maxOp, p.maxOp, 0], y: [0, -p.rise], x: [0, p.sway] }}

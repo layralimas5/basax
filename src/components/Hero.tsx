@@ -48,7 +48,7 @@ export function Hero() {
         >
           Solo vivo.
           <br />
-          <span className="bg-gradient-to-r from-brand-200 to-brand-400 bg-clip-text text-transparent [text-shadow:none] [filter:drop-shadow(0_2px_10px_rgb(0_0_0_/_0.55))]">
+          <span className="bg-gradient-to-r from-gold-200 via-gold-300 to-gold-500 bg-clip-text text-transparent [text-shadow:none] [filter:drop-shadow(0_2px_12px_rgb(0_0_0_/_0.5))]">
             Resultado que permanece.
           </span>
         </motion.h1>
@@ -70,8 +70,8 @@ export function Hero() {
           transition={{ duration: 0.6, ease: EASE, delay: 0.22 }}
           className="mt-10 flex flex-col items-center gap-3"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
-            <Leaf className="h-3.5 w-3.5 text-brand-300" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold-300/40 bg-white/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-sm">
+            <Leaf className="h-3.5 w-3.5 text-gold-300" />
             Basax MMM
           </span>
           <p className="text-base font-medium text-brand-200 md:text-lg [text-shadow:0_0_18px_rgba(21,189,95,0.55)]">

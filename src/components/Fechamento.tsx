@@ -52,7 +52,7 @@ export function Fechamento() {
           className="text-balance text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl"
         >
           O futuro da produtividade começa{" "}
-          <span className="bg-gradient-to-r from-brand-300 to-brand-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-gold-200 via-gold-300 to-gold-500 bg-clip-text text-transparent">
             abaixo da superfície.
           </span>
         </motion.h2>
@@ -65,7 +65,7 @@ export function Fechamento() {
           className="mt-10 flex items-center justify-center gap-2"
         >
           <Logo variant="white" className="h-9" />
-          <span className="text-2xl font-bold tracking-tight text-white md:text-3xl">
+          <span className="text-gold-gradient text-2xl font-bold tracking-tight md:text-3xl">
             MMM
           </span>
         </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -47,18 +48,30 @@ export function Navbar() {
 
         <nav className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
-            <a
+            <motion.a
               key={l.href}
               href={l.href}
+              whileHover={
+                reduce
+                  ? undefined
+                  : {
+                      scale: [1, 1.12, 1],
+                      transition: {
+                        duration: 0.6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      },
+                    }
+              }
               className={cn(
                 "rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 scrolled
-                  ? "text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-50"
+                  ? "text-zinc-600 hover:text-brand-700 dark:text-zinc-400 dark:hover:text-brand-300"
                   : "text-white/90 hover:text-white [text-shadow:0_1px_8px_rgb(0_0_0_/_0.4)]",
               )}
             >
               {l.label}
-            </a>
+            </motion.a>
           ))}
         </nav>
 
@@ -68,7 +81,7 @@ export function Navbar() {
             aria-label="Abrir menu"
             onClick={() => setOpen((v) => !v)}
             className={cn(
-              "inline-flex h-9 w-9 items-center justify-center rounded-lg border transition-colors md:hidden",
+              "inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-lg border transition-colors md:hidden",
               scrolled
                 ? "border-zinc-200 text-zinc-700 dark:border-zinc-800 dark:text-zinc-300"
                 : "border-white/30 bg-white/10 text-white backdrop-blur-sm",
@@ -93,7 +106,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 dark:text-zinc-300 dark:hover:bg-zinc-900"
+                className="block rounded-lg px-4 py-3 text-sm font-medium text-zinc-700 transition-colors hover:bg-brand-50 hover:text-brand-700 dark:text-zinc-300 dark:hover:bg-zinc-900"
               >
                 {l.label}
               </a>

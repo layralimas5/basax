@@ -66,7 +66,7 @@ export function Beneficios() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5, ease: EASE }}
-          className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-brand-100"
+          className="text-center text-sm font-semibold uppercase tracking-[0.25em] text-gold-300"
         >
           Benefícios
         </motion.p>
