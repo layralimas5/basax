@@ -9,7 +9,7 @@ export function ProductBreakout() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="relative mx-auto mt-16 w-full max-w-xs md:mt-6">
+    <div className="relative mx-auto mt-16 w-full max-w-[13rem] sm:max-w-[16rem] md:mt-6 md:max-w-xs">
       {/* Painel / card */}
       <motion.div
         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.96 }}

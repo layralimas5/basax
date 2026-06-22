@@ -9,7 +9,7 @@ export function PlantBreakout() {
   const reduce = useReducedMotion();
 
   return (
-    <div className="relative mx-auto w-full max-w-sm md:mt-2">
+    <div className="relative mx-auto w-full max-w-[15rem] sm:max-w-[19rem] md:mt-2 md:max-w-sm">
       {/* Imagem (cafezeiro + solo) com cantos arredondados, flutuando */}
       <motion.div
         initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.96 }}

@@ -31,16 +31,26 @@ type Cultura = {
    * card verde, com leve balanço. Ex.: cutout: "/culturas/cafe.png".
    */
   cutout?: string;
+  /**
+   * Escala da imagem recortada sobre o círculo (padrão 1.6). Reduza para
+   * objetos que preenchem todo o quadro (ex.: coco).
+   */
+  cutoutScale?: number;
+  /**
+   * Expande o círculo verde além do tamanho padrão, em % (só o disco verde,
+   * não a imagem). Ex.: discGrow: 10.
+   */
+  discGrow?: number;
 };
 
 const culturas: Cultura[] = [
   { nome: "Banana", icon: Banana, cutout: "/culturas/banana.png" },
   { nome: "Café", icon: Coffee, cutout: "/culturas/cafe.png" },
-  { nome: "Coco", icon: TreePalm /* img: "/culturas/coco.jpg" */ },
-  { nome: "Mamão", icon: Apple /* img: "/culturas/mamao.jpg" */ },
-  { nome: "Maracujá", icon: Grape /* img: "/culturas/maracuja.jpg" */ },
-  { nome: "Pimenta do reino", icon: Sprout /* img: "/culturas/pimenta-do-reino.jpg" */ },
-  { nome: "Tomate", icon: Cherry /* img: "/culturas/tomate.jpg" */ },
+  { nome: "Coco", icon: TreePalm, cutout: "/culturas/coco.png" },
+  { nome: "Mamão", icon: Apple, cutout: "/culturas/mamao.png" },
+  { nome: "Maracujá", icon: Grape, cutout: "/culturas/maracuja.png" },
+  { nome: "Pimenta do reino", icon: Sprout, cutout: "/culturas/pimenta-do-reino.png" },
+  { nome: "Tomate", icon: Cherry, cutout: "/culturas/tomate.png" },
 ];
 
 const itemV: Variants = {
@@ -133,13 +143,16 @@ export function Culturas() {
                 className="group flex flex-col items-center"
               >
                 {/* Disco verde circular (menor) com a cultura */}
-                <div className="relative aspect-square w-[72%] max-w-[7rem]">
+                <div className="relative h-[clamp(3.75rem,7vw,7rem)] w-[clamp(3.75rem,7vw,7rem)]">
                   {/* halo */}
                   {!reduce && (
                     <div className="absolute inset-2 rounded-full bg-brand-400/25 blur-lg transition-colors group-hover:bg-brand-400/45" />
                   )}
                   {/* disco verde */}
-                  <div className="absolute inset-0 overflow-hidden rounded-full bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 shadow-lg shadow-brand-900/25 ring-1 ring-black/5">
+                  <div
+                    style={c.discGrow ? { inset: `-${c.discGrow}%` } : undefined}
+                    className="absolute inset-0 overflow-hidden rounded-full bg-gradient-to-br from-brand-500 via-brand-600 to-brand-800 shadow-lg shadow-brand-900/25 ring-1 ring-black/5"
+                  >
                     <div
                       className="absolute inset-0 opacity-[0.12]"
                       style={{
@@ -175,7 +188,8 @@ export function Culturas() {
                         alt={`Cultura: ${c.nome}`}
                         fill
                         sizes="(min-width: 640px) 14vw, 34vw"
-                        className="scale-[1.6] object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.32)]"
+                        style={{ transform: `scale(${c.cutoutScale ?? 1.6})` }}
+                        className="object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.32)]"
                       />
                     </motion.div>
                   ) : (
