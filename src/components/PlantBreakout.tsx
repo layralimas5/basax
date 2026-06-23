@@ -23,9 +23,9 @@ export function PlantBreakout() {
         >
           <Image
             src="/cenario-planta.png"
-            alt="Cafezeiro com raízes vigorosas em solo nutrido pelo BASAX MMM"
-            width={1153}
-            height={1171}
+            alt="Cafezeiro com raízes em solo, nutrido pelos elementos do BASAX MMM (Si, Ca, Mg, K e micronutrientes)"
+            width={1452}
+            height={1302}
             priority
             quality={100}
             sizes="(min-width: 768px) 400px, 90vw"
